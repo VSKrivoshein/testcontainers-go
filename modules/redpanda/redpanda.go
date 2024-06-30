@@ -80,6 +80,7 @@ func RunContainer(ctx context.Context, opts ...testcontainers.ContainerCustomize
 				"--smp=1",
 				"--memory=1G",
 			},
+			WaitingFor: wait.ForListeningPort(defaultKafkaAPIPort),
 		},
 		Started: true,
 	}
